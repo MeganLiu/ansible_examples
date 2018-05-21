@@ -1,0 +1,10 @@
+- hosts: localhost
+  tasks:
+  - name: wait for usage testing
+    wait_for:
+      host: 127.0.0.1
+      port: 8080
+      state: started
+      delay: 10
+      timeout: 45
+  tags: test_waitfor_usage
